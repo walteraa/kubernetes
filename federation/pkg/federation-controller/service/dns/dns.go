@@ -222,6 +222,7 @@ func (s *ServiceDNSController) validateConfig() error {
 }
 
 func (s *ServiceDNSController) retrieveOrCreateDNSZone() error {
+  glog.info("Before getDNSZones calling")
 	matchingZones, err := getDNSZones(s.zoneName, s.zoneID, s.dnsZones)
 	if err != nil {
 		//return fmt.Errorf("error querying for DNS zones: %v", err)
