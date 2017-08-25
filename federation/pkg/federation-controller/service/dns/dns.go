@@ -225,7 +225,7 @@ func (s *ServiceDNSController) retrieveOrCreateDNSZone() error {
 	matchingZones, err := getDNSZones(s.zoneName, s.zoneID, s.dnsZones)
 	if err != nil {
 		//return fmt.Errorf("error querying for DNS zones: %v", err)
-    glog.Info("Work around to keep using the DNS service if a DNS was not found");
+    glog.Info("Workaround to keep using the DNS service if a DNS was not found");
 	}
 	switch len(matchingZones) {
 	case 0: // No matching zones for s.zoneName, so create one
