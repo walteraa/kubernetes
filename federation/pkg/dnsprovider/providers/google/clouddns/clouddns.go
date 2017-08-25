@@ -20,7 +20,7 @@ package clouddns
 import (
 	"io"
 
-	"cloud.google.com/go/compute/metadata"
+//	"cloud.google.com/go/compute/metadata"
 	"github.com/golang/glog"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
@@ -54,7 +54,10 @@ type Config struct {
 
 // newCloudDns creates a new instance of a Google Cloud DNS Interface.
 func newCloudDns(config io.Reader) (*Interface, error) {
-	projectID, _ := metadata.ProjectID() // On error we get an empty string, which is fine for now.
+	//projectID, _ := metadata.ProjectID() // On error we get an empty string, which is fine for now.
+  projectID := "corc-tutorial"
+  glog.Info("projectID = ",projectID)
+
 	var tokenSource oauth2.TokenSource
 	// Possibly override defaults with config below
 	if config != nil {
