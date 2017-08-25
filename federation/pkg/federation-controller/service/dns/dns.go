@@ -324,7 +324,7 @@ func getDNSZones(dnsZoneName string, dnsZoneID string, dnsZonesInterface dnsprov
 
 	var matches []dnsprovider.Zone
 	findName := strings.TrimSuffix(dnsZoneName, ".")
-  var count := 1;
+  count := 1;
 	for _, dnsZone := range dnsZones {
 
     glog.Info("Zone #%i: %s",count,dnsZone.Name());
